@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kajetan Puzio — CViątko</title>
+<title>Kajetan Puzio — CV | Praktykant DevOps</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -181,6 +181,30 @@
     color: var(--muted);
     margin-top: 2.5rem;
   }
+
+  /* --- added: bullet lists, skill groups --- */
+  .entry ul {
+    margin: 0.3rem 0 0;
+    padding-left: 1.1rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .entry li { margin-bottom: 0.25rem; }
+  .entry li::marker { color: var(--accent); }
+  .skill-group { margin-bottom: 1rem; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0 0 0.45rem;
+  }
+  .tag.learning {
+    background: transparent;
+    border: 1px dashed var(--accent);
+  }
+  .extra p { margin: 0 0 0.6rem; line-height: 1.65; font-size: 0.95rem; max-width: 60ch; }
+  .extra p:last-child { margin-bottom: 0; }
+  .entry-title a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -196,13 +220,14 @@
         <h1 class="out name" style="animation-delay:70ms">Kajetan Puzio</h1>
 
         <p class="line" style="animation-delay:140ms"><span class="prompt">$</span>cat role.txt</p>
-        <p class="out" style="animation-delay:210ms">Student informatyki</p>
+        <p class="out" style="animation-delay:210ms">Praktykant DevOps, student Informatyki (Politechnika Łódzka)</p>
 
         <p class="line" style="animation-delay:280ms"><span class="prompt">$</span>contact --list</p>
         <p class="out contact" style="animation-delay:350ms">
           <a href="mailto:kajet2006@gmail.com">--email kajet2006@gmail.com</a>
           <a href="tel:+48799854842">--tel +48 799 854 842</a>
-          <a href="https://www.linkedin.com/in/kajetan-puzio-0264ba39b/" target="_blank" rel="noopener" aria-label="LinkedIn (otwiera się w nowej karcie)">--linkedin https://www.linkedin.com/in/kajetan-puzio-0264ba39b/</a>
+          <a href="https://www.linkedin.com/in/kajetan-puzio-0264ba39b/" target="_blank" rel="noopener" aria-label="LinkedIn (otwiera się w nowej karcie)">--linkedin kajetan-puzio</a>
+          <a href="https://github.com/LateMigo" target="_blank" rel="noopener" aria-label="GitHub (otwiera się w nowej karcie)">--github LateMigo</a>
         </p>
 
         <p class="line" style="animation-delay:420ms"><span class="prompt">$</span><span class="cursor">_</span></p>
@@ -212,8 +237,7 @@
     <section class="block about">
       <h2 aria-label="O mnie"><span class="cmd">$ about --me</span></h2>
       <div class="block-body">
-        <p>Student zaczynający właśnie II rok Informatyki na wydziale WEEIA (Wydział Elektrotechniki, Elektroniki, Informatyki i Automatyki) na Politechnice Łódzkiej. Mój profil kwalifikuje się do wsparcia PFRON z tytułu lekkiego stopnia niepełnosprawności (perlak ucha prawego), co generuje dla firmy miesięczne dofinansowanie do wynagrodzenia oraz zmniejsza wpłaty na Fundusz, nie wpływając w żaden sposób na czas mojej pracy, który wynosi standardowe 8 godzin dziennie. Lubię rozwijać się w różnych obszarach informatyki w szczególności DevOps czy cyberbezpieczeństwo. Ukończyłem kurs dla studentów stworzony przez Ministerstwo Obrony Narodowej "Techniki zapewnienia ciągłości pracy i przywracania po awarii w centrach danych". Interesują mnie różne tematy od historii poprzez filozofie, aż do muzyki (szczególnie metal oraz rock). Moją codzienną inspiracją jest wszechstronnie wykształcony człowiek, Bartosz Walaszek. Posiadam prawo jazdy kat. B oraz uprawnienia spawacza na Tig 141.
-        </p>
+        <p>Student II roku Informatyki na wydziale WEEIA Politechniki Łódzkiej, obecnie na praktykach DevOps. Na co dzień pracuję z GCP, Firebase, GitHub Actions i skryptami automatyzującymi pracę. Rozwijam się w kierunku chmury i Infrastructure as Code (Terraform, AWS), interesuje mnie też cyberbezpieczeństwo.</p>
       </div>
     </section>
 
@@ -221,24 +245,90 @@
       <h2 aria-label="Doświadczenie"><span class="cmd">$ experience --list</span></h2>
       <div class="block-body">
         <div class="entry">
-          <div class="entry-title">Praktykant DevOps - MapMaker</div>
-          <div class="entry-meta">08.2026 - obecnie</div>
-          <p>Tworzenie skillów do claude code, pisanie skryptów, GCP, firebase, git, pomoc w tworzeniu i obsłudze strony. Nauka prawdziwego środowiska pracy przy udziale mentora oraz przy pomocy Claude Code.</p>
+          <div class="entry-title">Praktykant DevOps — MapMaker</div>
+          <div class="entry-meta">08.2026 – obecnie</div>
+          <ul>
+            <li>Skonfigurowałem pipeline CI/CD w GitHub Actions: automatyczny deploy strony firmowej na Firebase Hosting po merge'u do gałęzi main</li>
+            <li>Wdrożenie Google Analytics 4 na stronie firmowej</li>
+            <li>Praca z GCP (Cloud Storage, Firebase), pisanie skryptów w Bashu, praca z Git/GitHub</li>
+            <li>Przygotowywanie map dla gmin i współpraca z samorządami</li>
+            <li>Tworzenie skilli do Claude Code wspierających pracę zespołu</li>
+          </ul>
         </div>
         <div class="entry">
-          <div class="entry-title">Praca wakacyjna - Przedsiębiorstwo Produkcyjno-Handlowo-Usługowe "Łętowska"</div>
-          <div class="entry-meta">05.2025 - 08.2025</div>
-          <p>Praca łącznie ponad 2 miesiące przy obsłudze robota malującego oraz naprawie i kontroli szyb.</p>
+          <div class="entry-title">Wolontariusz techniczny — Radio Żak</div>
+          <div class="entry-meta">11.2025 – obecnie</div>
+          <p>Wsparcie techniczne studenckiego radia.</p>
         </div>
         <div class="entry">
-          <div class="entry-title">Wolontariusz — Radio Żak</div>
-          <div class="entry-meta">11.2025 - obecnie</div>
-          <p>Udzielanie się techniczne w Radiu Żak</p>
+          <div class="entry-title">Praca wakacyjna — PPHU „Łętowska”</div>
+          <div class="entry-meta">05.2025 – 08.2025</div>
+          <p>Obsługa robota malującego, kontrola jakości i naprawa szyb.</p>
         </div>
         <div class="entry">
           <div class="entry-title">Wolontariusz — Tarnobrzeskie Stowarzyszenie Chrońmy Zwierzęta</div>
-          <div class="entry-meta">06.2023 — 09.2025</div>
-          <p>Dbanie o dobro zwierząt oraz ich komfort w schronisku.</p>
+          <div class="entry-meta">06.2023 – 09.2025</div>
+          <p>Opieka nad zwierzętami w schronisku.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 aria-label="Projekty"><span class="cmd">$ projects --list</span></h2>
+      <div class="block-body">
+        <div class="entry">
+          <div class="entry-title">Baza wiedzy o prawie transportowym dla Claude Code</div>
+          <div class="entry-meta">Claude Code, Harmonogram zadań Windows</div>
+          <ul>
+            <li>Skill z bazą wiedzy o polskim i unijnym prawie transportu drogowego (CMR, czas pracy kierowców, ADR, kabotaż)</li>
+            <li>Zautomatyzowałem cotygodniową aktualizację bazy wiedzy przez Harmonogram zadań Windows uruchamiający Claude Code w trybie headless</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="entry-title"><a href="https://puzio-app.web.app/" target="_blank" rel="noopener">Ta strona — CV online</a></div>
+          <div class="entry-meta">HTML, CSS, Firebase Hosting</div>
+          <p>Responsywna strona z trybem ciemnym, hostowana na Firebase.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 aria-label="Umiejętności"><span class="cmd">$ skills --list</span></h2>
+      <div class="block-body">
+        <div class="skill-group">
+          <p class="skill-label">Chmura i DevOps</p>
+          <div class="tags">
+            <span class="tag">GCP (Cloud Storage, Firebase)</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Git / GitHub</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Skrypty i programowanie</p>
+          <div class="tags">
+            <span class="tag">Bash</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Python (podstawy)</span>
+            <span class="tag">C (podstawy)</span>
+            <span class="tag">HTML / CSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Systemy i narzędzia</p>
+          <div class="tags">
+            <span class="tag">VMware</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">Claude Code</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">W trakcie nauki</p>
+          <div class="tags">
+            <span class="tag learning">Terraform</span>
+            <span class="tag learning">AWS</span>
+          </div>
         </div>
       </div>
     </section>
@@ -247,28 +337,22 @@
       <h2 aria-label="Wykształcenie"><span class="cmd">$ education --list</span></h2>
       <div class="block-body">
         <div class="entry">
-          <div class="entry-title">Politechnika Łódzka</div>
-          <div class="entry-meta">Informatyka • 09.2025 — obecnie</div>
+          <div class="entry-title">Politechnika Łódzka, WEEIA</div>
+          <div class="entry-meta">Informatyka (studia inżynierskie, II rok) • 09.2025 – obecnie</div>
+        </div>
+        <div class="entry">
           <div class="entry-title">I Społeczne Liceum Ogólnokształcące im. Hetmana Jana Tarnowskiego</div>
-          <div class="entry-meta">matematyka/informatyka/angielski • 09.2021 — 04.2025</div>
+          <div class="entry-meta">profil matematyka / informatyka / angielski • 09.2021 – 04.2025</div>
         </div>
       </div>
     </section>
 
     <section class="block">
-      <h2 aria-label="Umiejętności"><span class="cmd">$ skills --list</span></h2>
+      <h2 aria-label="Kursy i certyfikaty"><span class="cmd">$ certs --list</span></h2>
       <div class="block-body">
-        <div class="tags">
-          <span class="tag">Bash</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Podstawy C</span>
-          <span class="tag">Podstawy Python</span>
-          <span class="tag">HTML i CSS</span>
-          <span class="tag">Podstawy wirtualizacji VMware i Windows Server</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Podstawy obsługi GCP, w tym GCS, Firebase oraz Playwright</span>
-          <span class="tag">Obsługa Gita oraz Github</span>
-          <span class="tag">Obsługa Claude Code oraz tworzenie skilli</span>
+        <div class="entry">
+          <div class="entry-title">„Techniki zapewnienia ciągłości pracy i przywracania po awarii w centrach danych”</div>
+          <div class="entry-meta">Kurs dla studentów, Ministerstwo Obrony Narodowej</div>
         </div>
       </div>
     </section>
@@ -277,24 +361,24 @@
       <h2 aria-label="Języki"><span class="cmd">$ languages --list</span></h2>
       <div class="block-body">
         <div class="tags">
-          <span class="tag">Język Polski - ojczysty</span>
-          <span class="tag">Język angielski - B2</span>
-          <span class="tag">Język hiszpański - A1</span>
+          <span class="tag">Polski — ojczysty</span>
+          <span class="tag">Angielski — B2</span>
+          <span class="tag">Hiszpański — A1</span>
         </div>
       </div>
     </section>
 
-    <section class="block cta-block">
-      <h2 aria-label="Projekty"><span class="cmd">$ github --open</span></h2>
+    <section class="block extra">
+      <h2 aria-label="Dodatkowe informacje"><span class="cmd">$ cat extra.txt</span></h2>
       <div class="block-body">
-        <a class="run-btn" href="https://github.com/LateMigo" target="_blank" rel="noopener" aria-label="https://github.com/LateMigo (otwiera się w nowej karcie)">
-          https://github.com/LateMigo
-        </a>
+        <p>Prawo jazdy kat. B. Uprawnienia spawacza TIG (141).</p>
+        <p>Posiadam lekki stopień niepełnosprawności, co pozwala pracodawcy uzyskać dofinansowanie PFRON do wynagrodzenia i obniża wpłaty na Fundusz. Nie wpływa to na mój czas pracy (pełen etat, 8 h dziennie).</p>
+        <p>Zainteresowania: historia, filozofia, muzyka metalowa i rockowa.</p>
       </div>
     </section>
 
     <footer>puzio-app.web.app<span class="cursor">_</span></footer>
-    
+
   </main>
 </body>
 </html>
