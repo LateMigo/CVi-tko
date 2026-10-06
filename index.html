@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kajetan Puzio — CV | Praktykant DevOps</title>
+<meta name="robots" content="noindex" />
+<title>Kajetan Puzio — CV | DevOps, automatyzacja, AI</title>
+<meta name="description" content="Kajetan Puzio — student Informatyki (Politechnika Łódzka). DevOps, CI/CD, automatyzacja i narzędzia AI (Claude Code, MCP), GCP i Firebase." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -205,6 +207,7 @@
   .extra p { margin: 0 0 0.6rem; line-height: 1.65; font-size: 0.95rem; max-width: 60ch; }
   .extra p:last-child { margin-bottom: 0; }
   .entry-title a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  .cta { margin: -1.2rem 0 3rem; }
 </style>
 </head>
 <body>
@@ -220,12 +223,13 @@
         <h1 class="out name" style="animation-delay:70ms">Kajetan Puzio</h1>
 
         <p class="line" style="animation-delay:140ms"><span class="prompt">$</span>cat role.txt</p>
-        <p class="out" style="animation-delay:210ms">Praktykant DevOps, student Informatyki (Politechnika Łódzka)</p>
+        <p class="out" style="animation-delay:210ms">
+          DevOps · automatyzacja · narzędzia AI<br>Student Informatyki (Politechnika Łódzka)
+        </p>
 
         <p class="line" style="animation-delay:280ms"><span class="prompt">$</span>contact --list</p>
         <p class="out contact" style="animation-delay:350ms">
           <a href="mailto:kajet2006@gmail.com">--email kajet2006@gmail.com</a>
-          <a href="tel:+48799854842">--tel +48 799 854 842</a>
           <a href="https://www.linkedin.com/in/kajetan-puzio-0264ba39b/" target="_blank" rel="noopener" aria-label="LinkedIn (otwiera się w nowej karcie)">--linkedin kajetan-puzio</a>
           <a href="https://github.com/LateMigo" target="_blank" rel="noopener" aria-label="GitHub (otwiera się w nowej karcie)">--github LateMigo</a>
         </p>
@@ -234,10 +238,14 @@
       </div>
     </div>
 
+    <div class="cta">
+      <a class="run-btn" href="cv.pdf" download="Kajetan_Puzio_CV.pdf">./pobierz-cv.pdf</a>
+    </div>
+
     <section class="block about">
       <h2 aria-label="O mnie"><span class="cmd">$ about --me</span></h2>
       <div class="block-body">
-        <p>Student II roku Informatyki na wydziale WEEIA Politechniki Łódzkiej, obecnie na praktykach DevOps. Na co dzień pracuję z GCP, Firebase, GitHub Actions i skryptami automatyzującymi pracę. Rozwijam się w kierunku chmury i Infrastructure as Code (Terraform, AWS), interesuje mnie też cyberbezpieczeństwo.</p>
+        <p>Student II roku Informatyki na wydziale WEEIA Politechniki Łódzkiej. Na praktykach w firmie tworzącej portale mapowe zbudowałem automatyczne wdrożenia (CI/CD), wdrożyłem zgodność strony z RODO i tworzyłem narzędzia AI, które usprawniają pracę zespołu. Lubię automatyzować powtarzalne zadania i przekładać wymagania biznesowe i prawne na działające rozwiązania. Rozwijam się w kierunku chmury i Infrastructure as Code (Terraform, AWS), interesuje mnie też cyberbezpieczeństwo.</p>
       </div>
     </section>
 
@@ -245,14 +253,18 @@
       <h2 aria-label="Doświadczenie"><span class="cmd">$ experience --list</span></h2>
       <div class="block-body">
         <div class="entry">
-          <div class="entry-title">Praktykant DevOps — MapMaker</div>
-          <div class="entry-meta">08.2026 – obecnie</div>
+          <div class="entry-title">Praktykant IT (DevOps, narzędzia AI) — MAPMAKER.ONLINE</div>
+          <div class="entry-meta">07.2026 – 09.2026 • Łódź</div>
           <ul>
-            <li>Skonfigurowałem pipeline CI/CD w GitHub Actions: automatyczny deploy strony firmowej na Firebase Hosting po merge'u do gałęzi main</li>
-            <li>Wdrożenie Google Analytics 4 na stronie firmowej</li>
-            <li>Praca z GCP (Cloud Storage, Firebase), pisanie skryptów w Bashu, praca z Git/GitHub</li>
-            <li>Przygotowywanie map dla gmin i współpraca z samorządami</li>
-            <li>Tworzenie skilli do Claude Code wspierających pracę zespołu</li>
+            <li>Zbudowałem i utrzymywałem stronę firmową na Firebase Hosting; skonfigurowałem pipeline CI/CD w GitHub Actions: każdy merge do gałęzi main automatycznie publikuje nową wersję</li>
+            <li>Przeanalizowałem wymogi RODO i przepisy o cookies, wdrożyłem mechanizm zgody na cookies; Google Analytics 4 i Firebase Analytics zbierają dane tylko po zgodzie użytkownika</li>
+            <li>Google Cloud Platform: skonfigurowałem prywatny bucket Cloud Storage (region europe-central2, blokada publicznego dostępu, jednolity dostęp, wersjonowanie obiektów, soft delete) do śledzenia zmian w dokumentacji projektu</li>
+            <li>Ustawiłem budżet i alerty kosztowe w Cloud Billing dla projektu oraz podpiąłem konto rozliczeniowe firmy</li>
+            <li>Stworzyłem skille (bazy wiedzy) dla Claude Code wspierające pracę zespołu: RODO oraz prawo transportowe PL/UE</li>
+            <li>Automatyzowałem zadania w przeglądarce, łącząc asystenta AI z Chrome przez Playwright MCP (Chrome DevTools Protocol) i Claude in Chrome</li>
+            <li>Pisałem skrypty w Bashu i Pythonie automatyzujące zadania administracyjne</li>
+            <li>Audyt SEO strony: mapa witryny (sitemap), adresy kanoniczne, Google Search Console</li>
+            <li>Dokumentowałem projekty (README) i wdrażałem zmiany razem z zespołem frontend i backend</li>
           </ul>
         </div>
         <div class="entry">
@@ -277,12 +289,37 @@
       <h2 aria-label="Projekty"><span class="cmd">$ projects --list</span></h2>
       <div class="block-body">
         <div class="entry">
+          <div class="entry-title"><a href="https://mestwin.web.app/" target="_blank" rel="noopener">Strona sprzedażowa szkolenia AI „Pierwszy Oficer”</a></div>
+          <div class="entry-meta">HTML, CSS, Firebase Hosting, GitHub Actions, GA4, Cloud Storage, Cloud Billing, RODO</div>
+          <ul>
+            <li>Samodzielnie poprowadziłem cały projekt, od strony prawnej po techniczną, odciążając przełożonego, który mógł skupić się na przygotowaniu szkolenia</li>
+            <li>Zbudowałem stronę i wdrożyłem ją na Firebase Hosting z automatycznym deployem w GitHub Actions po merge'u do main</li>
+            <li>Przeanalizowałem wymogi RODO i przepisy o cookies; wdrożyłem baner zgody i informacje o przetwarzaniu danych</li>
+            <li>Skonfigurowałem Google Analytics 4 i Firebase Analytics powiązane ze zgodą użytkownika oraz zadbałem o widoczność strony w Google (SEO)</li>
+            <li>Przechowywałem plan SEO w wersjonowanym buckecie Cloud Storage i skonfigurowałem alerty budżetowe dla projektu GCP</li>
+          </ul>
+        </div>
+        <div class="entry">
           <div class="entry-title">Baza wiedzy o prawie transportowym dla Claude Code</div>
           <div class="entry-meta">Claude Code, Harmonogram zadań Windows</div>
           <ul>
-            <li>Skill z bazą wiedzy o polskim i unijnym prawie transportu drogowego (CMR, czas pracy kierowców, ADR, kabotaż)</li>
+            <li>Skill z bazą wiedzy o polskim i unijnym prawie transportu drogowego (CMR, czas pracy kierowców, ADR, kabotaż, SENT, tachografy)</li>
             <li>Zautomatyzowałem cotygodniową aktualizację bazy wiedzy przez Harmonogram zadań Windows uruchamiający Claude Code w trybie headless</li>
+            <li>Testy pokazały, że instrukcje w SKILL.md nie były stosowane niezawodnie, więc przeniosłem je do CLAUDE.md, co rozwiązało problem</li>
           </ul>
+        </div>
+        <div class="entry">
+          <div class="entry-title">Automatyzacja przeglądarki z asystentem AI</div>
+          <div class="entry-meta">Playwright MCP, Chrome DevTools Protocol, Claude in Chrome</div>
+          <ul>
+            <li>Połączyłem Claude Code z przeglądarką Chrome przez serwer Playwright MCP (CDP, port 9222) oraz rozszerzenie Claude in Chrome</li>
+            <li>Asystent wykonuje powtarzalne zadania w przeglądarce zamiast człowieka</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="entry-title">Skill RODO dla Claude Code</div>
+          <div class="entry-meta">Claude Code</div>
+          <p>Baza wiedzy o RODO wykorzystywana przy ocenie zgodności stron i procesów z przepisami o ochronie danych.</p>
         </div>
         <div class="entry">
           <div class="entry-title"><a href="https://puzio-app.web.app/" target="_blank" rel="noopener">Ta strona — CV online</a></div>
@@ -298,9 +335,11 @@
         <div class="skill-group">
           <p class="skill-label">Chmura i DevOps</p>
           <div class="tags">
-            <span class="tag">GCP (Cloud Storage, Firebase)</span>
-            <span class="tag">GitHub Actions</span>
+            <span class="tag">Podstawy GCP (IAM, Compute Engine, Cloud Storage, Cloud Billing)</span>
+            <span class="tag">Firebase (Hosting, Analytics)</span>
+            <span class="tag">GitHub Actions (CI/CD)</span>
             <span class="tag">Docker</span>
+            <span class="tag">Linux (podstawy)</span>
             <span class="tag">Git / GitHub</span>
           </div>
         </div>
@@ -310,17 +349,35 @@
             <span class="tag">Bash</span>
             <span class="tag">SQL</span>
             <span class="tag">Python (podstawy)</span>
-            <span class="tag">C (podstawy)</span>
+            <span class="tag">C</span>
             <span class="tag">HTML / CSS</span>
           </div>
         </div>
         <div class="skill-group">
           <p class="skill-label">Systemy i narzędzia</p>
           <div class="tags">
+            <span class="tag">Podstawy Splunk</span>
             <span class="tag">VMware</span>
             <span class="tag">Windows Server</span>
+            <span class="tag">Google Analytics 4</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">AI i automatyzacja</p>
+          <div class="tags">
+            <span class="tag">Claude Code (skille, CLAUDE.md, headless)</span>
+            <span class="tag">MCP (Model Context Protocol)</span>
             <span class="tag">Playwright</span>
-            <span class="tag">Claude Code</span>
+            <span class="tag">Claude in Chrome</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Prawo i standardy</p>
+          <div class="tags">
+            <span class="tag">RODO</span>
+            <span class="tag">Zgoda na cookies</span>
+            <span class="tag">Podstawy SEO</span>
+            <span class="tag">Dokumentacja (README)</span>
           </div>
         </div>
         <div class="skill-group">
@@ -351,8 +408,14 @@
       <h2 aria-label="Kursy i certyfikaty"><span class="cmd">$ certs --list</span></h2>
       <div class="block-body">
         <div class="entry">
-          <div class="entry-title">„Techniki zapewnienia ciągłości pracy i przywracania po awarii w centrach danych”</div>
+          <div class="entry-title"><a href = "ZASWIADCZENIE.pdf"> „Techniki zapewnienia ciągłości pracy i przywracania po awarii w centrach danych”</a></div>
           <div class="entry-meta">Kurs dla studentów, Ministerstwo Obrony Narodowej</div>
+        </div>
+      </div>
+      <div class="block-body">
+        <div class="entry">
+          <div class="entry-title"><a href = "claude-academy-badge-claude-code-in-action.pdf">„Claude Code in Action”</a></div>
+          <div class="entry-meta">Anthropic Academy, 10.2026</div>
         </div>
       </div>
     </section>
@@ -362,7 +425,7 @@
       <div class="block-body">
         <div class="tags">
           <span class="tag">Polski — ojczysty</span>
-          <span class="tag">Angielski — B2</span>
+          <span class="tag">Angielski — B2+</span>
           <span class="tag">Hiszpański — A1</span>
         </div>
       </div>
@@ -377,7 +440,7 @@
       </div>
     </section>
 
-    <footer>puzio-app.web.app<span class="cursor">_</span></footer>
+    <footer>Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w tym CV przez potencjalnych pracodawców na potrzeby obecnych i przyszłych procesów rekrutacyjnych, zgodnie z RODO (rozporządzenie UE 2016/679).<span class="cursor">_</span></footer>
 
   </main>
 </body>
