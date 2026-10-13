@@ -1,89 +1,448 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/13.0.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/13.0.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/13.0.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/13.0.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/13.0.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/13.0.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/13.0.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/13.0.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/13.0.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/13.0.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Kajetan Puzio — CV | DevOps, automatyzacja, AI</title>
+  <meta name="description" content="Kajetan Puzio — student Informatyki (Politechnika Łódzka). DevOps, CI/CD, automatyzacja i narzędzia AI (Claude Code, MCP), GCP i Firebase." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f3ec;
+      --ink: #1e2320;
+      --muted: #585c4e;
+      --line: #ddd8c8;
+      --accent: #2e7d5b;
+      --accent-soft: rgba(46,125,91,.12);
+      --on-accent: #ffffff;
+      --term-bg: #14170f;
+      --term-ink: #e9e6da;
+      --term-muted: #9aa08e;
+      --term-accent: #6fd8a4;
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #14161a;
+        --ink: #ece9df;
+        --muted: #9a9d93;
+        --line: #2b2e27;
+        --accent: #4cc38a;
+        --accent-soft: rgba(76,195,138,.15);
+        --on-accent: var(--term-bg);
+        --term-bg: #0b0c08;
+        --term-ink: #eae7db;
+        --term-muted: #838a76;
+        --term-accent: #6fd8a4;
       }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', -apple-system, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem 4rem;
+    }
+
+    /* --- terminal hero (signature element) --- */
+    .terminal {
+      background: var(--term-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+      margin-bottom: 3rem;
+    }
+    .term-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 0.9rem;
+      background: rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .dot.r { background: #ec6a5e; }
+    .dot.y { background: #f4bf4f; }
+    .dot.g { background: #61c454; }
+    .term-title {
+      margin-left: 0.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--term-muted);
+    }
+    .term-body {
+      padding: 1.6rem 1.5rem 1.9rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .term-body > p {
+      animation: term-line-in 380ms var(--ease-out) both;
+    }
+    @keyframes term-line-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .term-body > p { animation: term-line-in-fade 200ms ease both; }
+      @keyframes term-line-in-fade { from { opacity: 0; } to { opacity: 1; } }
+    }
+    .term-body .line { margin: 0; color: var(--term-muted); }
+    .term-body .prompt { color: var(--term-accent); margin-right: 0.5rem; }
+    .term-body .out { margin: 0.15rem 0 0.9rem; color: var(--term-ink); }
+    .term-body .out.name { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
+    .term-body .contact { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0; }
+    .term-body .contact a { text-decoration: none; color: var(--term-ink); }
+    @media (hover: hover) and (pointer: fine) {
+      .term-body .contact a:hover { color: var(--term-accent); }
+    }
+    .term-body .contact a::before { content: "→ "; color: var(--term-accent); }
+    .cursor {
+      display: inline-block;
+      color: var(--term-accent);
+      animation: blink 1.1s steps(1) infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cursor { animation: none; }
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* --- content blocks --- */
+    .block { margin-bottom: 2.6rem; }
+    .block h2 {
+      margin: 0 0 1.1rem;
+      font-size: 0.85rem;
+    }
+    .cmd {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .about p { margin: 0; line-height: 1.7; max-width: 54ch; }
+
+    .entry { margin-bottom: 1.4rem; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-title { font-weight: 600; }
+    .entry-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0.2rem 0 0.4rem;
+    }
+    .entry p { margin: 0; line-height: 1.65; color: var(--ink); font-size: 0.95rem; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+    }
+
+    .run-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      background: var(--accent);
+      color: var(--on-accent);
+      padding: 0.85rem 1.3rem;
+      border-radius: 6px;
+      transition: transform 140ms ease;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .run-btn:hover { transform: translateY(-1px); }
+    }
+    .run-btn:active { transform: translateY(0); }
+    .run-btn::before { content: "▸"; }
+
+    footer {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 2.5rem;
+    }
+
+    /* --- added: bullet lists, skill groups --- */
+    .entry ul {
+      margin: 0.3rem 0 0;
+      padding-left: 1.1rem;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .entry li { margin-bottom: 0.25rem; }
+    .entry li::marker { color: var(--accent); }
+    .skill-group { margin-bottom: 1rem; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0 0 0.45rem;
+    }
+    .tag.learning {
+      background: transparent;
+      border: 1px dashed var(--accent);
+    }
+    .extra p { margin: 0 0 0.6rem; line-height: 1.65; font-size: 0.95rem; max-width: 60ch; }
+    .extra p:last-child { margin-bottom: 0; }
+    .entry-title a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .cta { margin: -1.2rem 0 3rem; }
+  </style>
+</head>
+<body>
+<main class="page">
+
+  <div class="terminal">
+    <div class="term-bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="term-title">kajetan@puzio — zsh</span>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <div class="term-body">
+      <p class="line" style="animation-delay:0ms"><span class="prompt">$</span>whoami</p>
+      <h1 class="out name" style="animation-delay:70ms">Kajetan Puzio</h1>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      <p class="line" style="animation-delay:140ms"><span class="prompt">$</span>cat role.txt</p>
+      <p class="out" style="animation-delay:210ms">
+        DevOps · automatyzacja · narzędzia AI<br>Student Informatyki (Politechnika Łódzka)
+      </p>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+      <p class="line" style="animation-delay:280ms"><span class="prompt">$</span>contact --list</p>
+      <p class="out contact" style="animation-delay:350ms">
+        <a href="mailto:kajet2006@gmail.com">--email kajet2006@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kajetan-puzio-0264ba39b/" target="_blank" rel="noopener" aria-label="LinkedIn (otwiera się w nowej karcie)">--linkedin kajetan-puzio</a>
+        <a href="https://github.com/LateMigo" target="_blank" rel="noopener" aria-label="GitHub (otwiera się w nowej karcie)">--github LateMigo</a>
+      </p>
+
+      <p class="line" style="animation-delay:420ms"><span class="prompt">$</span><span class="cursor">_</span></p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a class="run-btn" href="cv.pdf" download="Kajetan_Puzio_CV.pdf">./pobierz-cv.pdf</a>
+  </div>
+
+  <section class="block about">
+    <h2 aria-label="O mnie"><span class="cmd">$ about --me</span></h2>
+    <div class="block-body">
+      <p>Student II roku Informatyki na wydziale WEEIA Politechniki Łódzkiej. Na praktykach w firmie tworzącej portale mapowe zbudowałem automatyczne wdrożenia (CI/CD), wdrożyłem zgodność strony z RODO i tworzyłem narzędzia AI, które usprawniają pracę zespołu. Lubię automatyzować powtarzalne zadania i przekładać wymagania biznesowe i prawne na działające rozwiązania. Rozwijam się w kierunku chmury i Infrastructure as Code (Terraform, AWS), interesuje mnie też cyberbezpieczeństwo.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 aria-label="Doświadczenie"><span class="cmd">$ experience --list</span></h2>
+    <div class="block-body">
+      <div class="entry">
+        <div class="entry-title">Praktykant IT (DevOps, narzędzia AI) — MAPMAKER.ONLINE</div>
+        <div class="entry-meta">07.2026 – 09.2026 • Łódź</div>
+        <ul>
+          <li>Zbudowałem i utrzymywałem stronę firmową na Firebase Hosting; skonfigurowałem pipeline CI/CD w GitHub Actions: każdy merge do gałęzi main automatycznie publikuje nową wersję</li>
+          <li>Przeanalizowałem wymogi RODO i przepisy o cookies, wdrożyłem mechanizm zgody na cookies; Google Analytics 4 i Firebase Analytics zbierają dane tylko po zgodzie użytkownika</li>
+          <li>Google Cloud Platform: skonfigurowałem prywatny bucket Cloud Storage (region europe-central2, blokada publicznego dostępu, jednolity dostęp, wersjonowanie obiektów, soft delete) do śledzenia zmian w dokumentacji projektu</li>
+          <li>Ustawiłem budżet i alerty kosztowe w Cloud Billing dla projektu oraz podpiąłem konto rozliczeniowe firmy</li>
+          <li>Stworzyłem skille (bazy wiedzy) dla Claude Code wspierające pracę zespołu: RODO oraz prawo transportowe PL/UE</li>
+          <li>Automatyzowałem zadania w przeglądarce, łącząc asystenta AI z Chrome przez Playwright MCP (Chrome DevTools Protocol) i Claude in Chrome</li>
+          <li>Pisałem skrypty w Bashu i Pythonie automatyzujące zadania administracyjne</li>
+          <li>Audyt SEO strony: mapa witryny (sitemap), adresy kanoniczne, Google Search Console</li>
+          <li>Dokumentowałem projekty (README) i wdrażałem zmiany razem z zespołem frontend i backend</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Wolontariusz techniczny — Radio Żak</div>
+        <div class="entry-meta">11.2025 – obecnie</div>
+        <p>Wsparcie techniczne studenckiego radia.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Praca wakacyjna — PPHU „Łętowska”</div>
+        <div class="entry-meta">05.2025 – 08.2025</div>
+        <p>Obsługa robota malującego, kontrola jakości i naprawa szyb.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Wolontariusz — Tarnobrzeskie Stowarzyszenie Chrońmy Zwierzęta</div>
+        <div class="entry-meta">06.2023 – 09.2025</div>
+        <p>Opieka nad zwierzętami w schronisku.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 aria-label="Projekty"><span class="cmd">$ projects --list</span></h2>
+    <div class="block-body">
+      <div class="entry">
+        <div class="entry-title"><a href="https://mestwin.web.app/" target="_blank" rel="noopener">Strona sprzedażowa szkolenia AI „Pierwszy Oficer”</a></div>
+        <div class="entry-meta">HTML, CSS, Firebase Hosting, GitHub Actions, GA4, Cloud Storage, Cloud Billing, RODO</div>
+        <ul>
+          <li>Samodzielnie poprowadziłem cały projekt, od strony prawnej po techniczną, odciążając przełożonego, który mógł skupić się na przygotowaniu szkolenia</li>
+          <li>Zbudowałem stronę i wdrożyłem ją na Firebase Hosting z automatycznym deployem w GitHub Actions po merge'u do main</li>
+          <li>Przeanalizowałem wymogi RODO i przepisy o cookies; wdrożyłem baner zgody i informacje o przetwarzaniu danych</li>
+          <li>Skonfigurowałem Google Analytics 4 i Firebase Analytics powiązane ze zgodą użytkownika oraz zadbałem o widoczność strony w Google (SEO)</li>
+          <li>Przechowywałem plan SEO w wersjonowanym buckecie Cloud Storage i skonfigurowałem alerty budżetowe dla projektu GCP</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Baza wiedzy o prawie transportowym dla Claude Code</div>
+        <div class="entry-meta">Claude Code, Harmonogram zadań Windows</div>
+        <ul>
+          <li>Skill z bazą wiedzy o polskim i unijnym prawie transportu drogowego (CMR, czas pracy kierowców, ADR, kabotaż, SENT, tachografy)</li>
+          <li>Zautomatyzowałem cotygodniową aktualizację bazy wiedzy przez Harmonogram zadań Windows uruchamiający Claude Code w trybie headless</li>
+          <li>Testy pokazały, że instrukcje w SKILL.md nie były stosowane niezawodnie, więc przeniosłem je do CLAUDE.md, co rozwiązało problem</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Automatyzacja przeglądarki z asystentem AI</div>
+        <div class="entry-meta">Playwright MCP, Chrome DevTools Protocol, Claude in Chrome</div>
+        <ul>
+          <li>Połączyłem Claude Code z przeglądarką Chrome przez serwer Playwright MCP (CDP, port 9222) oraz rozszerzenie Claude in Chrome</li>
+          <li>Asystent wykonuje powtarzalne zadania w przeglądarce zamiast człowieka</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Skill RODO dla Claude Code</div>
+        <div class="entry-meta">Claude Code</div>
+        <p>Baza wiedzy o RODO wykorzystywana przy ocenie zgodności stron i procesów z przepisami o ochronie danych.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-title"><a href="https://puzio-app.web.app/" target="_blank" rel="noopener">Ta strona — CV online</a></div>
+        <div class="entry-meta">HTML, CSS, Firebase Hosting</div>
+        <p>Responsywna strona z trybem ciemnym, hostowana na Firebase.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 aria-label="Umiejętności"><span class="cmd">$ skills --list</span></h2>
+    <div class="block-body">
+      <div class="skill-group">
+        <p class="skill-label">Chmura i DevOps</p>
+        <div class="tags">
+          <span class="tag">Podstawy GCP (IAM, Compute Engine, Cloud Storage, Cloud Billing)</span>
+          <span class="tag">Firebase (Hosting, Analytics)</span>
+          <span class="tag">GitHub Actions (CI/CD)</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Linux (podstawy)</span>
+          <span class="tag">Git / GitHub</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Skrypty i programowanie</p>
+        <div class="tags">
+          <span class="tag">Bash</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Python (podstawy)</span>
+          <span class="tag">C</span>
+          <span class="tag">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Systemy i narzędzia</p>
+        <div class="tags">
+          <span class="tag">Podstawy Splunk</span>
+          <span class="tag">VMware</span>
+          <span class="tag">Windows Server</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Google Analytics 4</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">AI i automatyzacja</p>
+        <div class="tags">
+          <span class="tag">Claude Code (skille, CLAUDE.md, headless)</span>
+          <span class="tag">MCP (Model Context Protocol)</span>
+          <span class="tag">Playwright</span>
+          <span class="tag">Claude in Chrome</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">Prawo i standardy</p>
+        <div class="tags">
+          <span class="tag">RODO</span>
+          <span class="tag">Zgoda na cookies</span>
+          <span class="tag">Podstawy SEO</span>
+          <span class="tag">Dokumentacja (README)</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-label">W trakcie nauki</p>
+        <div class="tags">
+          <span class="tag learning">Terraform</span>
+          <span class="tag learning">AWS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 aria-label="Wykształcenie"><span class="cmd">$ education --list</span></h2>
+    <div class="block-body">
+      <div class="entry">
+        <div class="entry-title">Politechnika Łódzka, WEEIA</div>
+        <div class="entry-meta">Informatyka (studia inżynierskie, II rok) • 09.2025 – obecnie</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title">I Społeczne Liceum Ogólnokształcące im. Hetmana Jana Tarnowskiego</div>
+        <div class="entry-meta">profil matematyka / informatyka / angielski • 09.2021 – 04.2025</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 aria-label="Kursy i certyfikaty"><span class="cmd">$ certs --list</span></h2>
+    <div class="block-body">
+      <div class="entry">
+        <div class="entry-title"><a href = "ZASWIADCZENIE.pdf"> „Techniki zapewnienia ciągłości pracy i przywracania po awarii w centrach danych”</a></div>
+        <div class="entry-meta">Kurs dla studentów, Ministerstwo Obrony Narodowej</div>
+      </div>
+    </div>
+    <div class="block-body">
+      <div class="entry">
+        <div class="entry-title"><a href = "claude-academy-badge-claude-code-in-action.pdf">„Claude Code in Action”</a></div>
+        <div class="entry-meta">Anthropic Academy, 10.2026</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 aria-label="Języki"><span class="cmd">$ languages --list</span></h2>
+    <div class="block-body">
+      <div class="tags">
+        <span class="tag">Polski — ojczysty</span>
+        <span class="tag">Angielski — B2+</span>
+        <span class="tag">Hiszpański — A1</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block extra">
+    <h2 aria-label="Dodatkowe informacje"><span class="cmd">$ cat extra.txt</span></h2>
+    <div class="block-body">
+      <p>Prawo jazdy kat. B. Uprawnienia spawacza TIG (141).</p>
+      <p>Posiadam lekki stopień niepełnosprawności, co pozwala pracodawcy uzyskać dofinansowanie PFRON do wynagrodzenia i obniża wpłaty na Fundusz. Nie wpływa to na mój czas pracy (pełen etat, 8 h dziennie).</p>
+      <p>Zainteresowania: historia, filozofia, muzyka metalowa i rockowa.</p>
+    </div>
+  </section>
+
+  <footer>Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w tym CV przez potencjalnych pracodawców na potrzeby obecnych i przyszłych procesów rekrutacyjnych, zgodnie z RODO (rozporządzenie UE 2016/679).<span class="cursor">_</span></footer>
+
+</main>
+</body>
 </html>
