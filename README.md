@@ -1,4 +1,5 @@
 ﻿# Projekt zakładający założenie strony do zamieszczania mojego CV na hostingu firebase do podglądu dla mnie oraz dla firm rekrutujących
+ 
 ## Deployment
 
 Strona jest wdrażana automatycznie na Firebase Hosting przez GitHub Actions:
