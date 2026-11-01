@@ -300,6 +300,15 @@
         </ul>
       </div>
       <div class="entry">
+        <div class="entry-title"><a href="https://github.com/LateMigo/log_analyzer">Analizator logów SSH (Bash)</a></div>
+        <div class="entry-meta">Bash, grep, awk, Linux, Git, security</div>
+        <ul>
+          <li>Skrypt analizujący auth.log: wykrywa adresy IP z największą liczbą nieudanych logowań SSH (próby brute-force) i wypisuje ranking</li>
+          <li>Walidacja argumentów, błędy na stderr z kodem wyjścia 1, test porównujący wynik z oczekiwanym</li>
+          <li>CI w GitHub Actions: przy każdym pushu automatyczny shellcheck i test porównujący wynik skryptu z oczekiwanym</li>
+        </ul>
+      </div>
+      <div class="entry">
         <div class="entry-title">File prefix renamer (Bash)</div>
         <div class="entry-meta">Bash, Linux, Automatyzacja</div>
         <ul>
@@ -307,12 +316,13 @@
         </ul>
       </div>
       <div class="entry">
-        <div class="entry-title">Baza wiedzy o prawie transportowym dla Claude Code</div>
+        <div class="entry-title">Baza wiedzy o prawie transportowym dla Claude Code oraz skill RODO</div>
         <div class="entry-meta">Claude Code, Harmonogram zadań Windows</div>
         <ul>
           <li>Skill z bazą wiedzy o polskim i unijnym prawie transportu drogowego (CMR, czas pracy kierowców, ADR, kabotaż, SENT, tachografy)</li>
           <li>Zautomatyzowałem cotygodniową aktualizację bazy wiedzy przez Harmonogram zadań Windows uruchamiający Claude Code w trybie headless lub poprzez skrypt w bashu</li>
           <li>Testy pokazały, że instrukcje w SKILL.md nie były stosowane niezawodnie, więc przeniosłem je do CLAUDE.md, co rozwiązało problem</li>
+          <li>Baza wiedzy o RODO wykorzystywana przy ocenie zgodności stron i procesów z przepisami o ochronie danych.</li>
         </ul>
       </div>
       <div class="entry">
@@ -322,11 +332,6 @@
           <li>Połączyłem Claude Code z przeglądarką Chrome przez serwer Playwright MCP (CDP, port 9222) oraz rozszerzenie Claude in Chrome</li>
           <li>Asystent wykonuje powtarzalne zadania w przeglądarce zamiast człowieka</li>
         </ul>
-      </div>
-      <div class="entry">
-        <div class="entry-title">Skill RODO dla Claude Code</div>
-        <div class="entry-meta">Claude Code</div>
-        <p>Baza wiedzy o RODO wykorzystywana przy ocenie zgodności stron i procesów z przepisami o ochronie danych.</p>
       </div>
       <div class="entry">
         <div class="entry-title"><a href="https://puzio-app.web.app/" target="_blank" rel="noopener">Ta strona — CV online</a></div>
