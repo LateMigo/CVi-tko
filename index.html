@@ -309,14 +309,32 @@
         </ul>
       </div>
       <div class="entry">
-        <div class="entry-title">File prefix renamer (Bash)</div>
+        <div class="entry-title"><a href="https://github.com/LateMigo/check-logs">Skrypt liczący ERROR w logach z pipeline'em CI (Bash, GitHub Actions)</a></div>
+        <div class="entry-meta">Bash, Linux, GitHub Actions, CI/CD</div>
+        <ul>
+          <li>Skrypt (zadanie rekrutacyjne) rekurencyjnie przeszukuje pliki .log w podanym katalogu, wypisuje liczbę linii z ERROR i kończy się kodem 1, gdy jakieś znajdzie, a kodem 0, gdy nie ma żadnej (także gdy nie ma plików .log)</li>
+          <li>Użyłem set -euo pipefail i obsłużyłem kod wyjścia 1 z grep (brak dopasowań) przez || true, żeby brak błędów nie przerywał skryptu</li>
+          <li>Pipeline w GitHub Actions: checkout, uruchomienie skryptu z zapisem wyniku przez tee (shell: bash, żeby pipefail zachował kod wyjścia), upload wyniku jako artefaktu z if: always(). Pipeline robi się czerwony, gdy w logach są ERROR</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-title"><a href="https://github.com/LateMigo/docker-fix-dockerfile" target="_blank" rel="noopener">Naprawa Dockerfile (Docker)</a></div>
+        <div class="entry-meta">Docker, Dockerfile, DevOps, curl</div>
+        <ul>
+          <li>Zadanie rekrutacyjne: zdiagnozowałem trzy błędy w niedziałającym Dockerfile (zła ścieżka źródłowa w COPY, miejsce docelowe niezgodne z WORKDIR, CMD wskazujący na nieistniejący plik) i poprawiłem je bez zmiany kodu aplikacji</li>
+          <li>Zbudowałem obraz i uruchomiłem kontener z mapowaniem portu na 127.0.0.1, sprawdziłem status w docker ps -a i logi w docker logs</li>
+          <li>Zweryfikowałem działanie aplikacji przez curl -f na endpointach / oraz /healthz</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-title"><a href="https://github.com/LateMigo/add_prefix">File prefix renamer (Bash)</a></div>
         <div class="entry-meta">Bash, Linux, Automatyzacja</div>
         <ul>
           <li>Skrypt, który dodaje prefiks do wszystkich plików o podanym rozszerzeniu w bieżącym katalogu. Bez podanego prefiksu używa dzisiejszej daty (RRRR-MM-DD). Nie nadpisuje istniejących plików, a błędy kieruje na stderr i kończy się kodem 1.</li>
         </ul>
       </div>
       <div class="entry">
-        <div class="entry-title">Baza wiedzy o prawie transportowym dla Claude Code oraz skill RODO</div>
+        <div class="entry-title"><a href="https://github.com/LateMigo/transport_skill">Baza wiedzy o prawie transportowym dla Claude Code oraz skill RODO</a></div>
         <div class="entry-meta">Claude Code, Harmonogram zadań Windows</div>
         <ul>
           <li>Skill z bazą wiedzy o polskim i unijnym prawie transportu drogowego (CMR, czas pracy kierowców, ADR, kabotaż, SENT, tachografy)</li>
